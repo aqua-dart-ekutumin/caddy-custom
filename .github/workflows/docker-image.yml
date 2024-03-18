@@ -1,4 +1,4 @@
-name: Build image and scan it with Aqua scanner
+name: Build image and scan it with Aqua Scanner 
 
 on:
   push:
