@@ -1,4 +1,4 @@
-name: Build image and push
+name: Build image and push_Evgeny
 
 on:
   push:
