@@ -18,7 +18,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-demo-image:${{ github.sha }}
     - name: Login to Aqua Registry and pull scanner
-      run: echo ${AQUA_USERNAME} 
+      run: echo ${{AQUA_USERNAME}} 
       ## && docker login --password-stdin registry.aquasec.com -u ${AQUA_USERNAME} -p ${AQUA_PASSWORD} && docker pull registry.aquasec.com/scanner:2402.8.22
     - name: Scan the Docker image wiht Aqua
       run: docker run --rm -v /tmp:/tmp -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:2402.8.22 scan --token fd1cf36d86f5ab2a39e49b9bb157694f8fdca47e --host https://08c048c27d-d.cloud.aquasec.com --no-verify --verbose-errors --local my-demo-image:${{ github.sha }} --show-negligible --html --htmlfile /tmp/out.html --jsonfile /tmp/out.json > /dev/null
