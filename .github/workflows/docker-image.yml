@@ -1,4 +1,4 @@
-name: Build image and push_Evgeny
+name: Build image and scan it with Aqua scanner
 
 on:
   push:
